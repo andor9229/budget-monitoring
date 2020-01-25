@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$/../BudgetMonitoring">
+      <sourceFolder url="file://$MODULE_DIR$/../BudgetMonitoring/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/../BudgetMonitoring/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/facade/flare-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/facade/ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/facade/ignition-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/fideloper/proxy" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/fzaninotto/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/jakub-onderka/php-console-color" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/jakub-onderka/php-console-highlighter" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/league/commonmark-ext-table" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/mockery/mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/nunomaduro/collision" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/opis/closure" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/paragonie/random_compat" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpspec/prophecy" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpunit/php-token-stream" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/scrivo/highlight.php" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/debug" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/polyfill-iconv" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/../BudgetMonitoring/vendor/webmozart/assert" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

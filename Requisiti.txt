@@ -1,0 +1,16 @@
+- User (1 utente può avere pià account)
+- Account (1 account può avere solo un utente)
+- Categories
+- Budget (1 budget può avere solo una categoria)
+- Transactions
+- Goals
+- Dashboard and Reports
+- Savings
+
+Un account ha la possibilità di gestire le entrate e le uscite.
+Quando si aggiunge un' entrata si può scegliere se ripartire con il conteggio del budget o no.
+E' comunque possibile ripartire dal conteggio quando si vuole
+Quando si aggiunge un' uscita va associata a un account e a una categoria (se è presente)
+Quando si aggiungono entrate e si sceglie di ripartire con il conteggio i soldi rimanenti andranno automaticamente nei savings
+I savings potranno essere ripartiti in percentuali (30% viaggi, 20% macchina, 50% banca)
+Le percentuali potranno essere attribuite ai Goals.
