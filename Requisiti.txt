@@ -1,7 +1,6 @@
 - User (1 utente può avere pià account)
 - Account (1 account può avere solo un utente)
 - Categories
-- Budget (1 budget può avere solo una categoria)
 - Transactions
 - Goals
 - Dashboard and Reports
