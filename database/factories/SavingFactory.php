@@ -2,10 +2,10 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Model\Transaction\TransactionType;
+use App\Models\Saving\Saving;
 use Faker\Generator as Faker;
 
-$factory->define(TransactionType::class, function (Faker $faker) {
+$factory->define(Saving::class, function (Faker $faker) {
     return [
         //
     ];
