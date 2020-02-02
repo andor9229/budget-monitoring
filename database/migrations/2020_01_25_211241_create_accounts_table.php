@@ -16,9 +16,9 @@ class CreateAccountsTable extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->text('name');
-            $table->float('amount')->nullable();
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('currency_id');
+            $table->timestamp('count_expense_from')->default(now());
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('currency_id');
             $table->timestamps();
 
             $table->foreign('user_id')
@@ -28,7 +28,6 @@ class CreateAccountsTable extends Migration
             $table->foreign('currency_id')
                 ->references('id')
                 ->on('currencies');
-
         });
     }
 

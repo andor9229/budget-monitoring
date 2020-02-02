@@ -1,0 +1,20 @@
+.navbar-mobile {
+    background-color: white;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: -1px -3px 12px 0px #a9a9a9ab;
+    a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 0;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    a.active {
+        color: #4CAF50;
+    }
+}

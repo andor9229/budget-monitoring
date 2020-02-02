@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Goal\Goal;
 use App\Models\Saving\Saving;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class SavingController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.saving.index')
+            ->with('account', auth()->user()->account)
+            ->with('goals', Goal::where('account_id', auth()->user()->account->id)->get());
     }
 
     /**

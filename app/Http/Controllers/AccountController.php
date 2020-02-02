@@ -2,40 +2,55 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AccountRequest;
 use App\Models\Account\Account;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class AccountController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View;
      */
     public function index()
     {
-        //
+        return view('pages.account.index')
+            ->with('accounts', Account::where('user_id', auth()->user()->id)->get());
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return View
      */
     public function create()
     {
-        //
+        return view('pages.account.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param  AccountRequest  $request
+     * @return View
      */
-    public function store(Request $request)
+    public function store(AccountRequest $request)
     {
-        //
+        Account::create([
+            'name' => Str::lower($request->name),
+            'amount' => $request->amount,
+            'count_expense_from' => now(),
+            'user_id' => auth()->user()->id,
+            'currency_id' => $request->currency_id
+        ]);
+
+        Session::flash('status', 'Account creato correttamente!');
+        return view('pages.account.index')
+            ->with('accounts', Account::where('user_id', auth()->user()->id)->get());
     }
 
     /**
@@ -82,4 +97,19 @@ class AccountController extends Controller
     {
         //
     }
+
+    public function updateCountExpenseFrom(Account $account)
+    {
+        $account->count_expense_from = now();
+        $account->save();
+
+        return $account;
+    }
+
+    public function indexSelect()
+    {
+        return view('pages.account.selected_account')
+            ->with('accounts', Account::where('user_id', auth()->user()->id)->get());
+    }
+
 }

@@ -24,8 +24,7 @@ class AccountRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|text',
-            'user_id' => 'required'
+            'name' => 'required|unique:accounts'
         ];
     }
 }

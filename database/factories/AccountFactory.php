@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Factory;
 $factory->define(Account::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'amount' => $faker->randomFloat('2'),
         'user_id' => factory(User::class)->create()->id,
         'currency_id' => factory(Currency::class)->create()->id
     ];

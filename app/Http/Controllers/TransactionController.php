@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\Transaction\Transaction;
+use App\Http\Requests\TransactionRequest;
+use App\Models\Transaction\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class TransactionController extends Controller
 {
@@ -14,7 +16,8 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.transaction.index')
+            ->with('transactions', Transaction::all());
     }
 
     /**
@@ -24,18 +27,30 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.transaction.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  TransactionRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TransactionRequest $request)
     {
-        //
+        Transaction::create([
+            'amount' => $request->amount,
+            'payee' => $request->payee,
+            'paid' => ! is_null($request->paid),
+            'category_id' => $request->category_id,
+            'account_id' => auth()->user()->select_account_id,
+            'transaction_type' => $request->transaction_type
+        ]);
+
+        Session::flash('status', 'Transazione salvata correttamente!');
+
+        return view('pages.transaction.index')
+            ->with('transactions', Transaction::all());
     }
 
     /**

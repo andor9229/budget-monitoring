@@ -7,26 +7,32 @@
         </div>
     @endif
 
-    @if(\App\Models\Category\Category::count())
-        <form action="{{ route('category.create') }}" class="mb-4 text-right">
-            <button type="submit" class="btn btn-outline-primary">Aggiungi categoria</button>
+    @if($transactions->count())
+        <form action="{{ route('transaction.create') }}" class="mb-4 text-right">
+            <button type="submit" class="btn btn-outline-primary">Aggiungi transazione</button>
         </form>
         <table class="table table-bordered">
             <thead>
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Budget</th>
-                <th scope="col">Account</th>
+                <th scope="col">Uscita/Entrata</th>
+                <th scope="col">Pagato a/da</th>
+                <th scope="col">Pagato</th>
+                <th scope="col">Pagato Il</th>
+                <th scope="col">Categoria</th>
+                <th scope="col">Tipo</th>
             </tr>
             </thead>
             <tbody>
-            @foreach(\App\Models\Category\Category::all() as $category)
+            @foreach($transactions as $transaction)
             <tr>
-                <th scope="row">{{ $category->id }}</th>
-                <td class="text-capitalize">{{ $category->name }}</td>
-                <td>{{ $category->amount }}</td>
-                <td>{{ $category->account->name }}</td>
+                <th scope="row">{{ $transaction->id }}</th>
+                <td>{{ $transaction->amount }}</td>
+                <td>{{ $transaction->payee }}</td>
+                <td>{{ $transaction->paid ? 'si' : 'no'}}</td>
+                <td>{{ $transaction->paidOn }}</td>
+                <td>{{ $transaction->getCategory() ?? '-' }}</td>
+                <td>{{ $transaction->transaction_type }}</td>
             </tr>
             @endforeach
             </tbody>
@@ -34,9 +40,9 @@
     @else
         <div class="card">
             <div class="card-body">
-                Non è presente nessuna categoria.
-                <form action="{{ route('category.create') }}" class="text-right">
-                    <button type="submit" class="btn btn-outline-primary">Aggiungi categoria</button>
+                Non è presente nessuna transazione.
+                <form action="{{ route('transaction.create') }}" class="text-right">
+                    <button type="submit" class="btn btn-outline-primary">Aggiungi transazione</button>
                 </form>
             </div>
         </div>

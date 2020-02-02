@@ -7,36 +7,35 @@
         </div>
     @endif
 
-    @if(\App\Models\Account\Account::count())
-        <form action="{{ route('account.create') }}" class="mb-4 text-right">
-            <button type="submit" class="btn btn-outline-primary">Aggiungi account</button>
+    @if($categories->count())
+        <form action="{{ route('category.create') }}" class="mb-4 text-right">
+            <button type="submit" class="btn btn-outline-primary">Aggiungi categoria</button>
         </form>
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Risparmio Iniziale</th>
-                <th scope="col">Valuta</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach(\App\Models\Account\Account::all() as $account)
-            <tr>
-                <th scope="row">{{ $account->id }}</th>
-                <td class="text-capitalize">{{ $account->name }}</td>
-                <td>{{ $account->amount }}</td>
-                <td>{{ $account->currency->name }}</td>
-            </tr>
-            @endforeach
-            </tbody>
-        </table>
+        @foreach($categories as $category)
+
+            <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col text-left text-capitalize">{{ $category->name }}</div>
+                    <div class="col text-right">{{ $category->amount }} {{ $category->account->currency->name }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: {{ $category->getExitTransactions() *  100 / $category->amount }}%" aria-valuenow="{{ $category->getExitTransactions() * 100 / $category->amount }}" aria-valuemin="0" aria-valuemax="{{ $category->amount }}">{{ $category->getExitTransactions() }} {{ $category->account->currency->symbol }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
     @else
         <div class="card">
             <div class="card-body">
-                Non è presente nessun account.
-                <form action="{{ route('account.create') }}" class="text-right">
-                    <button type="submit" class="btn btn-outline-primary">Aggiungi account</button>
+                Non è presente nessuna categoria.
+                <form action="{{ route('category.create') }}" class="text-right">
+                    <button type="submit" class="btn btn-outline-primary">Aggiungi categoria</button>
                 </form>
             </div>
         </div>

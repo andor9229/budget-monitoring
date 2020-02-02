@@ -1,59 +1,46 @@
 @extends('layouts.app')
 
-
 @section('content')
-    <form method="POST" action="{{ route('transaction.store') }}">
+    <form method="POST" action="{{ route('goal.store') }}">
         @csrf
         <div class="form-group row">
-            <label for="name" class="col-sm-2 col-form-label">Entrata/Uscita</label>
+            <label for="name" class="col-sm-2 col-form-label">Nome</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control {{ $errors->has('amount') ? 'is-invalid' : '' }}" name="amount">
+                <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name">
+                @if ($errors->has('name'))
+                    <div class="invalid-feedback">{{ $errors->first('name') }}</div>
+                @endif
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="percentage" class="col-sm-2 col-form-label">Percentuale sul risparmiato</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="percentage">
+                @if ($errors->has('percentage'))
+                    <span class="text-danger">{{ $errors->first('percentage') }}</span>
+                @endif
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="amount" class="col-sm-2 col-form-label">Totale obiettivo</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" name="amount">
                 @if ($errors->has('amount'))
-                    <div class="invalid-feedback">{{ $errors->first('amount') }}</div>
+                    <span class="text-danger">{{ $errors->first('amount') }}</span>
                 @endif
             </div>
         </div>
         <div class="form-group row">
-            <label for="amount" class="col-sm-2 col-form-label">Pagato a/da</label>
+            <label for="amount" class="col-sm-2 col-form-label">Obiettivo da raggiungere entro il</label>
             <div class="col-sm-10">
-                <input type="text" class="form-control" name="payee">
-                @if ($errors->has('payee'))
-                    <span class="text-danger">{{ $errors->first('payee') }}</span>
+                <input type="date" class="form-control" name="expire_at">
+                @if ($errors->has('expire_at'))
+                    <span class="text-danger">{{ $errors->first('expire_at') }}</span>
                 @endif
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="amount" class="col-sm-2 col-form-label"a</label>
-            <div class="col-sm-10">
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="paid">
-                    <label class="form-check-label" for="exampleCheck1">Pagato</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="amount" class="col-sm-2 col-form-label">Categoria</label>
-            <div class="col-sm-10">
-                <select class="form-control" name="category_id">
-                    <option value="">Nessuna Categoria</option>
-                    @foreach(\App\Models\Category\Category::all() as $category)
-                        <option value="{{ $category->id }}" class="text-uppercase">{{ $category->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="amount" class="col-sm-2 col-form-label">Tipo</label>
-            <div class="col-sm-10">
-                <select class="form-control" name="transaction_type">
-                    @foreach(\App\Models\Transaction\Transaction::TYPES as $type)
-                        <option value="{{ $type }}">{{ $type }}</option>
-                    @endforeach
-                </select>
             </div>
         </div>
         <div class="text-right">
-            <button type="submit" class="btn btn-outline-primary">Aggiungi Categoria</button>
+            <button type="submit" class="btn btn-outline-primary">Aggiungi Obiettivo</button>
         </div>
     </form>
 @endsection

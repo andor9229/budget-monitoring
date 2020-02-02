@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Percentage;
 use Illuminate\Foundation\Http\FormRequest;
 
 class GoalRequest extends FormRequest
@@ -13,7 +14,7 @@ class GoalRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,7 @@ class GoalRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'percentage' => [new Percentage]
         ];
     }
 }

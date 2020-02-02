@@ -2,6 +2,7 @@
 
 namespace App\Jobs;
 
+use App\Models\Transaction\Transaction;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -13,22 +14,14 @@ class PaidTransactions implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     /**
-     * Create a new job instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
-    }
-
-    /**
      * Execute the job.
      *
      * @return void
      */
     public function handle()
     {
-        //
+        Transaction::where('paid', false)
+            ->whereDate('paidOn', now()->toDateString())
+            ->update(['paid' => true]);
     }
 }

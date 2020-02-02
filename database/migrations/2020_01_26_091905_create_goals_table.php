@@ -15,7 +15,16 @@ class CreateGoalsTable extends Migration
     {
         Schema::create('goals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->text('name');
+            $table->float('percentage');
+            $table->float('amount')->default(0);
+            $table->unsignedBigInteger('account_id');
+            $table->date('expire_at')->nullable();
             $table->timestamps();
+
+            $table->foreign('account_id')
+                ->references('id')
+                ->on('accounts');
         });
     }
 

@@ -16,24 +16,17 @@ class CreateTransactionsTable extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->float('amount');
-            $table->float('payee')->nullable();
-            $table->timestamp('date')->default(now());
-            $table->unsignedInteger('account_id');
-            $table->unsignedInteger('category_id');
-            $table->unsignedInteger('transaction_type_id');
+            $table->text('payee')->nullable();
+            $table->boolean('paid')->default(true);
+            $table->date('paidOn')->default(now());
+            $table->unsignedBigInteger('category_id')->nullable();
+            $table->unsignedBigInteger('account_id');
+            $table->text('transaction_type');
             $table->timestamps();
-
-            $table->foreign('account_id')
-                ->references('id')
-                ->on('accounts');
 
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories');
-
-            $table->foreign('transaction_type_id')
-                ->references('id')
-                ->on('transaction_types');
         });
     }
 

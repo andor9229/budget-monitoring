@@ -1,1 +1,15 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+@import 'navbar';
+
+html, body {
+    background-color: $body-bg;
+    font-family: $font-family-sans-serif
+}

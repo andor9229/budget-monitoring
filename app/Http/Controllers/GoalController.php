@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\GoalRequest;
 use App\Models\Goal\Goal;
 use Illuminate\Http\Request;
 
@@ -24,18 +25,26 @@ class GoalController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.goal.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  GoalRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GoalRequest $request)
     {
-        //
+        Goal::create([
+            'name' => $request->name,
+            'percentage' => $request->percentage,
+            'amount' => $request->amount,
+            'expire_at' => $request->expire_at,
+            'account_id' => auth()->user()->select_account_id
+        ]);
+
+        return redirect(route('saving.index'));
     }
 
     /**

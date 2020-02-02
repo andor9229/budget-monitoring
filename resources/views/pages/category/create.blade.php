@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <form method="POST" action="{{ route('account.store') }}">
+    <form method="POST" action="{{ route('category.store') }}">
         @csrf
         <div class="form-group row">
             <label for="name" class="col-sm-2 col-form-label">Nome</label>
@@ -14,7 +14,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="amount" class="col-sm-2 col-form-label">Risparmio Iniziale</label>
+            <label for="amount" class="col-sm-2 col-form-label">Budget</label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" name="amount">
                 @if ($errors->has('amount'))
@@ -23,18 +23,8 @@
             </div>
 
         </div>
-        <div class="form-group row">
-            <label for="amount" class="col-sm-2 col-form-label">Valuta</label>
-            <div class="col-sm-10">
-                <select class="form-control" name="currency" id="currency">
-                    @foreach(\App\Models\Currency\Currency::all() as $currency)
-                        <option value="{{ $currency->id }}">{{ $currency->name }}</option>
-                    @endforeach
-                </select>
-            </div>
-        </div>
         <div class="text-right">
-            <button type="submit" class="btn btn-outline-primary">Aggiungi account</button>
+            <button type="submit" class="btn btn-outline-primary">Aggiungi Categoria</button>
         </div>
     </form>
 @endsection

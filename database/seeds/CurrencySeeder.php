@@ -11,6 +11,9 @@ class CurrencySeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\Models\Currency\Currency::class)->create([
+            'name' => 'EUR',
+            'symbol' => '€',
+        ]);
     }
 }

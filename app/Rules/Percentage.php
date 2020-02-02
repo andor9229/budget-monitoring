@@ -2,6 +2,7 @@
 
 namespace App\Rules;
 
+use App\Models\Goal\Goal;
 use Illuminate\Contracts\Validation\Rule;
 
 class Percentage implements Rule
@@ -25,7 +26,7 @@ class Percentage implements Rule
      */
     public function passes($attribute, $value)
     {
-        //
+        return (Goal::where('account_id', auth()->user()->select_account_id)->sum('percentage') + $value) <= 100;
     }
 
     /**
@@ -35,6 +36,6 @@ class Percentage implements Rule
      */
     public function message()
     {
-        return 'The validation error message.';
+        return 'La percentuale che hai inserito non è valida';
     }
 }

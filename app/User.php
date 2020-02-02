@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Models\Account\Account;
+use App\Models\Account\SelectAccount;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -16,7 +18,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'select_account_id'
     ];
 
     /**
@@ -36,4 +38,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function account()
+    {
+        return $this->belongsTo(Account::class, 'select_account_id', 'id');
+    }
 }

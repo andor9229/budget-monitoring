@@ -17,8 +17,15 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->text('name');
             $table->float('amount');
+            $table->unsignedBigInteger('account_id');
             $table->timestamps();
+
+            $table->foreign('account_id')
+                ->references('id')
+                ->on('accounts');
         });
+
+
     }
 
     /**
